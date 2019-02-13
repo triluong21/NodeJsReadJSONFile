@@ -1,0 +1,19 @@
+{
+  "name": "ReadFromFile",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/.bin/mocha \"./{,!(node_modules)/*/}*.spec.ts\" -t 10000 --require ts-node/register --require mocha.env --reporter spec"
+  },
+  "dependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^11.9.3",
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}

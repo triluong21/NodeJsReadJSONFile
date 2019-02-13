@@ -1,0 +1,96 @@
+{
+  "$schema": "file:payloadModel.json",
+    "customer": {
+        "name": "Mike"
+    },
+    "orderUnits": [
+      {
+        "orderInfo": {
+          "internetNumber": "92374938247"
+        },
+        "orderItems": [
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY2",
+            "quantity": "1"
+          },
+          {
+            "prodId": "AMSCKI",
+            "promotionKey": "PFKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "AMSCKI",
+            "promotionKey": "PFKEY2",
+            "quantity": "1"
+          },
+          {
+            "prodId": "007",
+            "offerCode": "EHUBKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "007",
+            "offerCode": "EHUBKEY2",
+            "quantity": "1"
+          }
+        ]
+      },
+      {
+        "orderInfo": {
+          "internetNumber": "11111"
+        },
+        "orderItems": [
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "GFT",
+            "promotionKey": "SERVKEY2",
+            "quantity": "1"
+          },
+          {
+            "prodId": "AMSCKI",
+            "promotionKey": "PFKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "AMSCKI",
+            "promotionKey": "PFKEY2",
+            "quantity": "1"
+          },
+          {
+            "prodId": "007",
+            "offerCode": "EHUBKEY1",
+            "quantity": "1"
+          },
+          {
+            "prodId": "007",
+            "offerCode": "EHUBKEY2",
+            "quantity": "1"
+          }
+        ]
+      }      
+    ],
+    "payment": {
+      "token": "9283742KLSDJF",
+      "amount": "12.25"
+    }
+}

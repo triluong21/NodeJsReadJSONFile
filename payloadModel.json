@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+      "ICustomer": {
+          "properties": {
+              "name": {
+                  "title": "name",
+                  "type": "string"
+              }
+          },
+          "required": [
+              "name"
+          ],
+          "title": "ICustomer",
+          "type": "object"
+      },
+      "IOrderInfo": {
+          "properties": {
+              "deliveryMethod": {
+                  "title": "deliveryMethod",
+                  "type": "string"
+              },
+              "internetNumber": {
+                  "title": "internetNumber",
+                  "type": "string"
+              }
+          },
+          "title": "IOrderInfo",
+          "type": "object"
+      },
+      "IOrderItem": {
+          "properties": {
+              "offerCode": {
+                  "title": "offerCode",
+                  "type": "string"
+              },
+              "prodId": {
+                  "enum": [
+                      "GFT",
+                      "AMSCKI",
+                      "007"
+                  ],
+                  "title": "prodId",
+                  "type": "string"
+              },
+              "promotionKey": {
+                  "title": "promotionKey",
+                  "type": "string"
+              },
+              "quantity": {
+                  "description": "Quantity required for PF",
+                  "title": "quantity",
+                  "type": "string"
+              },
+              "recipient": {
+                  "$ref": "#/definitions/IRecipient",
+                  "title": "recipient"
+              },
+              "subscriptionTerm": {
+                  "title": "subscriptionTerm",
+                  "type": "string"
+              },
+              "value": {
+                  "description": "Value required for PF",
+                  "title": "value",
+                  "type": "string"
+              }
+          },
+          "required": [
+              "prodId"
+          ],
+          "title": "IOrderItem",
+          "type": "object"
+      },
+      "IOrderUnit": {
+          "properties": {
+              "orderInfo": {
+                  "$ref": "#/definitions/IOrderInfo",
+                  "title": "orderInfo"
+              },
+              "orderItems": {
+                  "items": {
+                      "$ref": "#/definitions/IOrderItem"
+                  },
+                  "title": "orderItems",
+                  "type": "array"
+              }
+          },
+          "required": [
+              "orderInfo",
+              "orderItems"
+          ],
+          "title": "IOrderUnit",
+          "type": "object"
+      },
+      "IPayment": {
+          "properties": {
+              "token": {
+                  "title": "altPayInfo",
+                  "type": "string"
+              },
+              "amount": {
+                  "title": "amount",
+                  "type": "string"
+              },
+              "amountPaid": {
+                  "title": "amountPaid",
+                  "type": "string"
+              }
+          },
+          "required": [
+              "token",
+              "amount"
+          ],
+          "title": "IPayment",
+          "type": "object"
+      },
+      "IRecipient": {
+          "properties": {
+              "name": {
+                  "title": "name",
+                  "type": "string"
+              }
+          },
+          "required": [
+              "name"
+          ],
+          "title": "IRecipient",
+          "type": "object"
+      },
+      "ITransactionSource": {
+          "properties": {
+              "campaign": {
+                  "title": "campaign",
+                  "type": "string"
+              },
+              "campaignId": {
+                  "title": "campaignId",
+                  "type": "string"
+              },
+              "deviceType": {
+                  "title": "deviceType",
+                  "type": "string"
+              },
+              "emplid": {
+                  "title": "emplid",
+                  "type": "string"
+              },
+              "positionName": {
+                  "title": "positionName",
+                  "type": "string"
+              },
+              "referralSource": {
+                  "title": "referralSource",
+                  "type": "string"
+              },
+              "referringPage": {
+                  "title": "referringPage",
+                  "type": "string"
+              }
+          },
+          "title": "ITransactionSource",
+          "type": "object"
+      },
+      "ServpfPermissions": {
+          "properties": {
+              "allowCatalogPromotions": {
+                  "title": "allowCatalogPromotions",
+                  "type": "string"
+              },
+              "allowChildrenPromotions": {
+                  "title": "allowChildrenPromotions",
+                  "type": "string"
+              },
+              "allowContestPromotions": {
+                  "title": "allowContestPromotions",
+                  "type": "string"
+              },
+              "allowEnvironment": {
+                  "title": "allowEnvironment",
+                  "type": "string"
+              },
+              "allowInHousePromotions": {
+                  "title": "allowInHousePromotions",
+                  "type": "string"
+              },
+              "allowOutOfHousePromotions": {
+                  "title": "allowOutOfHousePromotions",
+                  "type": "string"
+              },
+              "allowPhone": {
+                  "title": "allowPhone",
+                  "type": "string"
+              },
+              "allowSeriesPromotions": {
+                  "title": "allowSeriesPromotions",
+                  "type": "string"
+              },
+              "allowSingleShotPromotions": {
+                  "title": "allowSingleShotPromotions",
+                  "type": "string"
+              },
+              "allowSweepsPromotions": {
+                  "title": "allowSweepsPromotions",
+                  "type": "string"
+              },
+              "eBillPerm": {
+                  "title": "eBillPerm",
+                  "type": "string"
+              },
+              "emailActivePerm": {
+                  "title": "emailActivePerm",
+                  "type": "string"
+              },
+              "emailAuthorization": {
+                  "title": "emailAuthorization",
+                  "type": "string"
+              },
+              "emailUseAnywherePerm": {
+                  "title": "emailUseAnywherePerm",
+                  "type": "string"
+              },
+              "emailUseForCompanyPerm": {
+                  "title": "emailUseForCompanyPerm",
+                  "type": "string"
+              },
+              "emaillocation": {
+                  "title": "emaillocation",
+                  "type": "string"
+              },
+              "permission0": {
+                  "title": "permission0",
+                  "type": "string"
+              },
+              "permission1": {
+                  "title": "permission1",
+                  "type": "string"
+              },
+              "permission2": {
+                  "title": "permission2",
+                  "type": "string"
+              },
+              "permission3": {
+                  "title": "permission3",
+                  "type": "string"
+              },
+              "permission4": {
+                  "title": "permission4",
+                  "type": "string"
+              },
+              "permission5": {
+                  "title": "permission5",
+                  "type": "string"
+              },
+              "permission6": {
+                  "title": "permission6",
+                  "type": "string"
+              },
+              "permission7": {
+                  "title": "permission7",
+                  "type": "string"
+              },
+              "permission8": {
+                  "title": "permission8",
+                  "type": "string"
+              },
+              "permission9": {
+                  "title": "permission9",
+                  "type": "string"
+              }
+          },
+          "title": "ServpfPermissions",
+          "type": "object"
+      }
+  },
+  "properties": {
+      "customer": {
+          "$ref": "#/definitions/ICustomer",
+          "title": "customer"
+      },
+      "orderUnits": {
+          "items": {
+              "$ref": "#/definitions/IOrderUnit"
+          },
+          "title": "orderUnits",
+          "type": "array"
+      },
+      "payment": {
+          "$ref": "#/definitions/IPayment",
+          "title": "payment"
+      },
+      "transactionSource": {
+          "$ref": "#/definitions/ITransactionSource",
+          "title": "transactionSource"
+      },
+      "uuid": {
+          "description": "Id asigned by Splitter process",
+          "title": "uuid",
+          "type": "string"
+      }
+  },
+  "required": [
+      "customer",
+      "orderUnits"
+  ],
+  "type": "object"
+}
+
